@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Şifre Yöneticisi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- iOS için PWA desteği -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-lock"></i> Şifre Yöneticisi</h1>
+        
+        <form id="passwordForm">
+            <div class="form-group">
+                <label for="website"><i class="fas fa-globe"></i> Website:</label>
+                <input type="text" id="website" placeholder="google.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Kullanıcı Adı:</label>
+                <input type="text" id="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password"><i class="fas fa-key"></i> Şifre:</label>
+                <div class="password-input">
+                    <input type="password" id="password" required>
+                    <button type="button" id="togglePassword"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="strength-meter">
+                    <div class="strength-bar"></div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn-save"><i class="fas fa-save"></i> Kaydet</button>
+                <button type="button" id="generatePassword" class="btn-generate"><i class="fas fa-random"></i> Rastgele Şifre</button>
+            </div>
+        </form>
+        
+        <div class="password-list-container">
+            <h2><i class="fas fa-list"></i> Kayıtlı Şifreler</h2>
+            <ul id="passwordList"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

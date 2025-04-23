@@ -1,0 +1,378 @@
+/* TEMEL STİLLER */
+:root {
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --danger: #ef233c;
+    --success: #4cc9f0;
+    --dark: #1e1e1e;
+    --light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark) 0%, #2b2d42 100%);
+    color: var(--light);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(43, 45, 66, 0.9);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* FORM STİLLERİ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input {
+    width: 470px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* ESKİ KOD (Sorunlu) */
+.password-input {
+    position: relative;
+}
+
+.password-input button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--success);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* YENİ KOD (Düzeltilmiş) */
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input input {
+    flex: 1;
+    padding-right: 40px; /* Buton için boşluk bırakıyoruz */
+}
+
+.password-input button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--success);
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+/* Mobil için ek ayarlar */
+@media (max-width: 600px) {
+    .password-input button {
+        right: 5px;
+        font-size: 18px; /* Mobilde biraz daha büyük */
+    }
+    
+    .password-input input {
+        padding-right: 35px;
+    }
+}
+
+/* ŞİFRE GÜÇ GÖSTERGESİ */
+.strength-meter {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s;
+}
+
+/* BUTONLAR */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-save {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-generate {
+    background: #2d7d46;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* ŞİFRE LİSTESİ */
+.password-list-container {
+    margin-top: 30px;
+}
+
+.password-list-container h2 {
+    color: var(--success);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary);
+    transition: all 0.2s;
+}
+
+li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.account-info {
+    flex: 1;
+}
+
+.account-info strong {
+    display: block;
+    color: var(--success);
+    margin-bottom: 3px;
+}
+
+.account-info span {
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+.password-display {
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-buttons button {
+    background: none;
+    color: var(--success);
+    padding: 8px;
+    flex: none;
+    width: auto;
+}
+
+.action-buttons button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+}
+
+.empty-message {
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    list-style: none;
+}
+
+/* KAYDIRMA ÇUBUĞU */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+/* MOBİL UYUMLULUK - Güncellenmiş */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+    }
+    
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .password-list-container {
+        margin-top: 20px;
+    }
+    
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .action-buttons {
+        align-self: flex-end;
+    }
+    
+    /* Daha büyük dokunma alanları */
+    button, input, .action-buttons button {
+        min-height: 44px;
+    }
+    
+    .alert {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+/* Dokunma etkileşimleri için */
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS input zoom sorunu çözümü */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
+/* ALERT MESAJLARI */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    opacity: 0;
+    animation: slideIn 0.3s forwards, fadeOut 0.3s 2.7s forwards;
+}
+
+.alert.success {
+    background: #4cc9f0;
+    border-left: 5px solid #2a9d8f;
+}
+
+.alert.error {
+    background: #ef233c;
+    border-left: 5px solid #d00000;
+}
+
+.alert i {
+    font-size: 20px;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        top: 0;
+    }
+    to { 
+        opacity: 1;
+        top: 20px;
+    }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
